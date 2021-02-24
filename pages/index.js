@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import Navbar from '../components/Navbar/Navbar.js';
 import productsService from '../services/productsService.js';
 
 const Home = () => {
@@ -16,7 +15,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <h1>Hola Perriiitos!!!!</h1>
       {productsList.map(product => (
         <p>{product.name}</p>
