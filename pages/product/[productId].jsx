@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import productsService from '../../services/productsService';
+import Layout from '@components/Layout/Layout';
+import ProductSummary from '@components/ProductSummary/ProductSummary';
+
+import productsService from '@services/productsService';
 
 const ProductDetails = () => {
-  const [productDetail, setProductDetail] = useState({});
+  const [productDetail, setProductDetail] = useState(null);
 
   useEffect(async () => {
     const { productId } = router.query;
@@ -17,10 +20,9 @@ const ProductDetails = () => {
 
   const router = useRouter();
   return (
-    <div>
-      Pagina de ProductDetails perros -- ID: {router.query.productId}
-      <p>{productDetail.name}</p>
-    </div>
+    <Layout>
+      {productDetail && <ProductSummary product={productDetail} />}
+    </Layout>
   );
 };
 

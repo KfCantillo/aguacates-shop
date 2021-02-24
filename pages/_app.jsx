@@ -1,12 +1,13 @@
-import Layout from '@components/Layout';
+import CartProvider from '@store/Cart';
 
-import '@/global.css';
+import 'semantic-ui-css/semantic.min.css';
+import './global.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
+    <CartProvider>
       <Component {...pageProps} />
-    </Layout>
+    </CartProvider>
   );
 };
 

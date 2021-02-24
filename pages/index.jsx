@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import Layout from '@components/Layout/Layout';
+import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader';
+import ProductList from '@components/ProductList/ProductList';
 
 import productsService from '../services/productsService.js';
 
@@ -14,12 +17,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Hola Perriiitos!!!!</h1>
-      {productsList.map(product => (
-        <p>{product.name}</p>
-      ))}
-    </div>
+    <Layout>
+      <KawaiiHeader />
+      <ProductList products={productsList} />
+    </Layout>
   );
 };
 

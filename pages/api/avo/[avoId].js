@@ -1,4 +1,5 @@
-import Database from '../../../database/bd';
+import Database from '@database/bd';
+import enablePublicAccess from '@cors';
 
 const getAvo = async (req, res) => {
   const { avoId } = req.query;

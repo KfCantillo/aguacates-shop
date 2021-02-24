@@ -3,9 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@database/*":["database/*"],
-      "@components/*":["components/*"]
+      "@database/*": ["database/*"],
+      "@components/*": ["components/*"],
+      "@store/*": ["store/*"],
+      "@services/*": ["services/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
