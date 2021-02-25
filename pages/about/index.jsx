@@ -2,7 +2,7 @@ import { Image, Header } from 'semantic-ui-react';
 
 import Layout from '@components/Layout/Layout';
 
-import './about.module.css';
+import styles from './about.module.css';
 
 const avoFacts = [
   {
@@ -39,9 +39,9 @@ const AboutPage = () => {
         <Header as='h1' textAlign='center'>
           13 Surprising Facts About Avocados
         </Header>
-        <figure>
+        <figure className={styles.figure}>
           <Image src='/images/avocados.jpg' alt='Avocados on a table' />
-          <figcaption>
+          <figcaption className={styles.figcaption}>
             Originally from{' '}
             <a
               target='_blank'
@@ -51,10 +51,10 @@ const AboutPage = () => {
             </a>
           </figcaption>
         </figure>
-        <ol>
+        <ol className={styles.ol}>
           {avoFacts.map(({ title, content }) => (
-            <li key={title}>
-              <h3 className='ui header'>{title}</h3>
+            <li key={title} className={styles.li}>
+              <h3 className={styles.h3 + ' ui header'}>{title}</h3>
               <p>{content}</p>
             </li>
           ))}

@@ -5,7 +5,7 @@ import PuesVivo from './AnimatedHeader';
 import PuesMuero from './RottenHeader';
 import ModalHeaderContent from './ModalHeaderContent';
 
-import './kawaiiHeader.module.css';
+import styles from './kawaiiHeader.module.css';
 
 const KawaiiHeader = () => {
   const [visible, setVisible] = useState(true);
@@ -28,7 +28,7 @@ const KawaiiHeader = () => {
   }, [count]);
 
   return (
-    <div className='container'>
+    <div className={styles.container}>
       {meMori ? (
         <PuesMuero />
       ) : (

@@ -1,3 +1,9 @@
-.ui.menu.huge {
+.container {
+  width: 95% !important;
+  max-width: 95% !important;
+  min-width: 95% !important;
+}
+
+.menu {
   font-size: 1.5rem;
 }

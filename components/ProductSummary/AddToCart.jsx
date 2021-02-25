@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Input, Icon, Transition } from 'semantic-ui-react';
 import { useCartMutations } from '@store/Cart';
 

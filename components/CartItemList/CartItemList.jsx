@@ -33,7 +33,7 @@ const CartItemList = ({ items, removeFromCart, loading = false }) => {
             style={{ background: '#f2f2f2' }}
           />
         ),
-        meta: `${quantity} x ${price}`,
+        meta: `${quantity} x  COP $${price}`,
         description: 'Some more information goes here....',
         extra: (
           <Button

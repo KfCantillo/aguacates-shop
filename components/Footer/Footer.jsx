@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Segment, Container, Grid, List, Header } from 'semantic-ui-react';
 
-import './footer.module.css';
+import styles from './footer.module.css';
 
 const Footer = () => (
   <Segment
@@ -13,10 +13,10 @@ const Footer = () => (
       borderTop: '1px solid #f2f2f2',
     }}
   >
-    <Container text>
+    <Container text className={styles.container}>
       <Grid stackable>
         <Grid.Row>
-          <Grid.Column width={4}>
+          <Grid.Column width={5}>
             <Header as='h4' content='Nosotros' />
             <List>
               <List.Item>
@@ -26,7 +26,7 @@ const Footer = () => (
               </List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={5}>
+          <Grid.Column width={6}>
             <Header as='h4' content='Servicios' />
             <List>
               <List.Item>
@@ -36,7 +36,7 @@ const Footer = () => (
               </List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={7}>
+          <Grid.Column width={5}>
             <Header as='h4'>Hecho para</Header>
             <p>
               <a href='https://platzi.com/'>Platzi y su curso de Next.JS</a> de
@@ -62,8 +62,8 @@ const Footer = () => (
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <div className='colophon'>
-        <p className='colophon-entry'>
+      <div className={styles.colophon}>
+        <p className={styles['colophon-entry']}>
           Icons made by{' '}
           <a
             target='_blank'
@@ -77,10 +77,10 @@ const Footer = () => (
             www.flaticon.com
           </a>
         </p>
-        <p className='colophon-entry'>
+        <p className={styles['colophon-entry']}>
           Avocado images taken from{' '}
           <a
-            className='acnor'
+            className={styles.acnor}
             target='_blank'
             href='https://www.californiaavocado.com/avocado101/avocado-varieties'
             title='California Avocado'

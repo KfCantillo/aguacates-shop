@@ -1,8 +1,8 @@
-/**
-* Hi curious student! :)
-* This a CSS Trick to keep the footer at the bottom.
-* Find out more modern CSS tricks at:
-* https://moderncss.dev/
+/*
+Hi curious student! :)
+This a CSS Trick to keep the footer at the bottom.
+Find out more modern CSS tricks at:
+https://moderncss.dev/
 */
 #__next {
   min-height: 100vh;
@@ -12,4 +12,18 @@
 #__next > main {
   margin: 1rem auto 0;
   max-width: 80ch;
+}
+.ui.button.primary {
+  background-color: green;
+}
+.ui.button.primary:hover,
+.ui.button.primary:focus {
+  background-color: #018a25;
+}
+.ui.button.primary:active {
+  background-color: #006600;
+}
+
+.ui.button.secondary {
+  background-color: red;
 }

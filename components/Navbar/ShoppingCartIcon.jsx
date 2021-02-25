@@ -1,6 +1,6 @@
 import { Basket } from '@components/SVGIcons';
 
-import './shoppingCartIcon.module.css';
+import style from './shoppingCartIcon.module.css';
 
 const ShoppingCartIcon = ({ cartCount, name }) => {
   const showCartCount = () => {
@@ -18,9 +18,9 @@ const ShoppingCartIcon = ({ cartCount, name }) => {
   };
 
   return (
-    <div className='container'>
+    <div className={style.container}>
       <Basket />
-      <div className='text'>
+      <div className={style.text}>
         {` ${name} `}
         {showCartCount()}
       </div>

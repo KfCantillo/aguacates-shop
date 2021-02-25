@@ -2,11 +2,11 @@ import { Grid, Header } from 'semantic-ui-react';
 
 import { PosMeMuero } from '@components/SVGIcons';
 
-import './modalHeaderContent.module.css';
+import styles from './modalHeaderContent.module.css';
 
 const ModalHeaderContent = () => {
   return (
-    <div className='container'>
+    <div className={styles.container}>
       <Grid columns={2}>
         <Grid.Row verticalAlign={'middle'}>
           <Grid.Column width='5'>

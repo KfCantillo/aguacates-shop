@@ -8,13 +8,13 @@ const mapProductsToCards = products =>
         as='a'
         header={name}
         image={image}
-        meta={<Card.Meta style={{ color: 'dimgray' }}>{price}</Card.Meta>}
+        meta={<Card.Meta style={{ color: 'dimgray' }}>COP ${price}</Card.Meta>}
       />
     </Link>
   ));
 
 const ProductList = ({ products }) => (
-  <Card.Group itemsPerRow={2} stackable>
+  <Card.Group itemsPerRow={4} stackable>
     {mapProductsToCards(products)}
   </Card.Group>
 );

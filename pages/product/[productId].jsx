@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { Container } from 'semantic-ui-react';
 
 import Layout from '@components/Layout/Layout';
 import ProductSummary from '@components/ProductSummary/ProductSummary';
@@ -21,7 +22,9 @@ const ProductDetails = () => {
   const router = useRouter();
   return (
     <Layout>
-      {productDetail && <ProductSummary product={productDetail} />}
+      <Container text>
+        {productDetail && <ProductSummary product={productDetail} />}
+      </Container>
     </Layout>
   );
 };

@@ -1,8 +1,8 @@
 import Database from '@database/bd';
-import enablePublicAccess from '@cors';
+//import enablePublicAccess from '@cors';
 
 const allAvos = async (req, res) => {
-  await enablePublicAccess(req, res);
+  //await enablePublicAccess(req, res);
 
   const db = new Database();
   const allAvos = await db.getAll();

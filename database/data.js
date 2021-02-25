@@ -123,6 +123,7 @@ const data = {
       shape: 'Pear',
       hardiness: '-5 °C',
       taste: 'Splendid, is an avocado',
+      'zutano malvec': 'Splendid, is an avocado zutano malvec',
     },
   },
 };

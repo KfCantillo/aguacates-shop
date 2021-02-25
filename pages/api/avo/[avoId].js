@@ -1,7 +1,9 @@
 import Database from '@database/bd';
-import enablePublicAccess from '@cors';
+//import enablePublicAccess from '@cors';
 
 const getAvo = async (req, res) => {
+  //await enablePublicAccess(req, res);
+
   const { avoId } = req.query;
 
   const db = new Database();
