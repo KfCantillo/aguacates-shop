@@ -1,9 +1,9 @@
 import proxyBase from './proxyBase';
 
 class productsService {
-  getAllProducts = () => {
+  getAllProducts = async () => {
     return proxyBase
-      .get('/avo')
+      .get('api/avo')
       .then(res => {
         return Promise.resolve(res.data);
       })
@@ -12,9 +12,9 @@ class productsService {
       });
   };
 
-  getProductById = (id = '') => {
+  getProductById = async (id = '') => {
     return proxyBase
-      .get(`/avo/${id}`)
+      .get(`api/avo/${id}`)
       .then(res => {
         return Promise.resolve(res.data);
       })

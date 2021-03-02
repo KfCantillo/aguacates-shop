@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Container } from 'semantic-ui-react';
 
@@ -7,18 +6,35 @@ import ProductSummary from '@components/ProductSummary/ProductSummary';
 
 import productsService from '@services/productsService';
 
-const ProductDetails = () => {
-  const [productDetail, setProductDetail] = useState(null);
+export const getStaticPaths = async () => {
+  const products = await productsService.getAllProducts();
+  let productsList = [];
+  if (products.success) {
+    productsList = products.data;
+  }
+  const paths = productsList.map(({ id }) => ({ params: { productId: id } }));
 
-  useEffect(async () => {
-    const { productId } = router.query;
-    const product = await productsService.getProductById(productId);
-    console.log(product);
-    if (product.success) {
-      setProductDetail(product.data);
-    }
-  }, []);
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
+export const getStaticProps = async ({ params }) => {
+  const product = await productsService.getProductById(params.productId);
+  let productDetail = {};
+  if (product.success) {
+    productDetail = product.data;
+  }
+
+  return {
+    props: {
+      productDetail,
+    },
+  };
+};
+
+const ProductDetails = ({ productDetail }) => {
   const router = useRouter();
   return (
     <Layout>

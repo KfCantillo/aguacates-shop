@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { getBaseUrlApi } from 'config/helpers';
 
-const baseURL = '/api'; //getBaseUrlApi();
+const baseURL = getBaseUrlApi();
 console.info('baseURL', baseURL);
 const getConfigAxios = () => {
   return {
