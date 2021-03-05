@@ -21,7 +21,7 @@ const CartItemList = ({ items, removeFromCart, loading = false }) => {
       return {
         childKey: id,
         header: (
-          <Link href='/product/[id]' as={`/product/${id}/`} passHref>
+          <Link href={`/product/${id}/`} passHref>
             <Item.Header as='a'>{name}</Item.Header>
           </Link>
         ),
