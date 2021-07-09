@@ -3,6 +3,8 @@ export const getBaseUrlApi = () => {
   if (env === 'dev') {
     return 'http://localhost:3000/';
   } else if (env === 'test') {
-    return 'https://testapi.ludify.com.au/';
+    return 'https://test.kcfashion.store/';
+  } else {
+    return 'https://kcfashion.store/';
   }
 };

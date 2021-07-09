@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Container } from 'semantic-ui-react';
 
@@ -6,7 +7,8 @@ import ProductSummary from '@components/ProductSummary/ProductSummary';
 
 import productsService from '@services/productsService';
 
-export const getStaticPaths = async () => {
+/* Use for create static sites on build */
+/* export const getStaticPaths = async () => {
   const products = await productsService.getAllProducts();
   let productsList = [];
   if (products.success) {
@@ -32,15 +34,24 @@ export const getStaticProps = async ({ params }) => {
       productDetail,
     },
   };
-};
+}; */
 
-const ProductDetails = ({ productDetail }) => {
+const ProductDetails = (/*{ productDetail }*/) => {
+  const [productDetail, setProductDetail] = useState(null);
+
+  useEffect(async () => {
+    const { productId } = router.query;
+    const product = await productsService.getProductById(productId);
+    console.log(product);
+    if (product.success) {
+      setProductDetail(product.data);
+    }
+  }, []);
+
   const router = useRouter();
   return (
     <Layout>
-      <Container text>
-        {productDetail && <ProductSummary product={productDetail} />}
-      </Container>
+      <Container text>{productDetail && <ProductSummary product={productDetail} />}</Container>
     </Layout>
   );
 };
