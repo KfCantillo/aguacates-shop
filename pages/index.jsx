@@ -3,9 +3,9 @@ import Layout from '@components/Layout/Layout';
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader';
 import ProductList from '@components/ProductList/ProductList';
 
-import productsService from '../services/productsService.js';
-
-export const getServerSideProps = async () => {
+import productsService from '@services/productsService.js';
+/* Use for pre rendering products */
+/* export const getServerSideProps = async () => {
   const products = await productsService.getAllProducts();
   let productsList = [];
   if (products.success) {
@@ -17,9 +17,19 @@ export const getServerSideProps = async () => {
       productsList,
     },
   };
-};
+}; */
 
-const Home = ({ productsList }) => {
+const Home = (/*{ productsList }*/) => {
+  const [productsList, setProductsList] = useState([]);
+
+  useEffect(async () => {
+    const products = await productsService.getAllProducts();
+    console.log(products);
+    if (products.success) {
+      setProductsList(products.data);
+    }
+  }, []);
+
   return (
     <Layout>
       <KawaiiHeader />
