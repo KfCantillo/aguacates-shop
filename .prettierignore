@@ -1,0 +1,9 @@
+apidoc
+.vscode
+.vs
+config
+node_modules
+.eslintignore
+.eslintrc.yml
+public
+src/assets

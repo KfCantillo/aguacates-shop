@@ -35,10 +35,7 @@ const Navbar = () => {
     <Menu size='huge' borderless pointing as='header' className={styles.menu}>
       <Container text className={styles.container}>
         <Link href='/' passHref>
-          <Menu.Item
-            active={pathname === '/'}
-            title='Inicio | Todos los productos'
-          >
+          <Menu.Item active={pathname === '/'} title='Inicio | Todos los productos'>
             <Transition
               animation='jiggle'
               visible={visible}
@@ -47,7 +44,7 @@ const Navbar = () => {
             >
               <Avocado />
             </Transition>
-            Avo Store
+            KC Fashion
           </Menu.Item>
         </Link>
         <Menu.Menu position='right'>

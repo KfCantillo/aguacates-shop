@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Confirm } from 'semantic-ui-react';
 
-import PuesVivo from './AnimatedHeader';
-import PuesMuero from './RottenHeader';
-import ModalHeaderContent from './ModalHeaderContent';
+import AnimatedHeader from './AnimatedHeader';
+import ModalHeaderContent from '@components/Commons/ModalHeaderContent';
+import { PosMeMuero } from '@components/SVGIcons';
 
 import styles from './kawaiiHeader.module.css';
 
@@ -29,19 +29,27 @@ const KawaiiHeader = () => {
 
   return (
     <div className={styles.container}>
-      {meMori ? (
-        <PuesMuero />
-      ) : (
-        <PuesVivo
-          visible={visible}
-          onClick={toggleVisible}
-          onComplete={() => setCount(prevCount => prevCount + 1)}
-        />
-      )}
+      <AnimatedHeader
+        visible={visible}
+        onClick={toggleVisible}
+        onComplete={() => setCount(prevCount => prevCount + 1)}
+        muerto={meMori}
+      />
 
       <Confirm
         open={modalOpen}
-        content={ModalHeaderContent}
+        content={
+          <ModalHeaderContent
+            header='Se Murió (O.O)'
+            content={
+              <>
+                <p>Lo tocaste tanto que lo mataste.</p>
+                <p>Por otro lado, eres una persona muy curiosa y has descubierto esto. :)</p>
+              </>
+            }
+            image={<PosMeMuero size='154px' />}
+          />
+        }
         onCancel={closeModal}
         onConfirm={closeModal}
         cancelButton='Ay, lo siento'

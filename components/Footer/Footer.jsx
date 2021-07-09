@@ -4,15 +4,7 @@ import { Segment, Container, Grid, List, Header } from 'semantic-ui-react';
 import styles from './footer.module.css';
 
 const Footer = () => (
-  <Segment
-    vertical
-    as='footer'
-    style={{
-      padding: '4em 0em',
-      marginTop: '3em',
-      borderTop: '1px solid #f2f2f2',
-    }}
-  >
+  <Segment vertical as='footer' className={styles.footer}>
     <Container text className={styles.container}>
       <Grid stackable>
         <Grid.Row>
@@ -39,24 +31,19 @@ const Footer = () => (
           <Grid.Column width={5}>
             <Header as='h4'>Hecho para</Header>
             <p>
-              <a href='https://platzi.com/'>Platzi y su curso de Next.JS</a> de
-              Platzi dictado por{' '}
-              <a href='https://twitter.com/jonalvarezz'>@jonalvarezz</a>
+              <a href='https://kcfashion.store/'>K.C Fashion</a> desarrollado por{' '}
+              <a href='https://www.dycosolutions.com/'>DyCO Solutions S.A.S</a>
             </p>
             <List horizontal style={{ display: 'flex' }}>
               <List.Item
-                icon='twitter'
+                icon='instagram'
                 style={{ display: 'flex' }}
-                content={<a href='https://twitter.com/jonalvarezz'>Twitter</a>}
+                content={<a href='https://instagram.com/kcfashionaguachica'>Instagram</a>}
               />
               <List.Item
-                icon='github'
+                icon='facebook'
                 style={{ display: 'flex' }}
-                content={
-                  <a href='https://github.com/jonalvarezz/platzi-nextjs'>
-                    GitHub
-                  </a>
-                }
+                content={<a href='https://facebook.com/kcfashionaguachica'>Facebook</a>}
               />
             </List>
           </Grid.Column>
@@ -65,11 +52,7 @@ const Footer = () => (
       <div className={styles.colophon}>
         <p className={styles['colophon-entry']}>
           Icons made by{' '}
-          <a
-            target='_blank'
-            href='https://www.flaticon.com/authors/freepik'
-            title='Freepik'
-          >
+          <a target='_blank' href='https://www.flaticon.com/authors/freepik' title='Freepik'>
             Freepik
           </a>
           {' from '}
@@ -77,7 +60,7 @@ const Footer = () => (
             www.flaticon.com
           </a>
         </p>
-        <p className={styles['colophon-entry']}>
+        {/*<p className={styles['colophon-entry']}>
           Avocado images taken from{' '}
           <a
             className={styles.acnor}
@@ -88,14 +71,10 @@ const Footer = () => (
             Avocado 101
           </a>
           {' at '}
-          <a
-            target='_blank'
-            href='https://www.californiaavocado.com'
-            title='Flaticon'
-          >
+          <a target='_blank' href='https://www.californiaavocado.com' title='Flaticon'>
             California Avocado
           </a>
-        </p>
+        </p>*/}
       </div>
     </Container>
   </Segment>

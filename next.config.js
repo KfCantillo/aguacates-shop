@@ -5,10 +5,10 @@ module.exports = {
         source: '/avocado/:path*',
         destination: '/product/:path*',
       },
-      {
+      /*{
         source: '/:path*',
         destination: '/products/:path*',
-      },
+      },*/
     ];
   },
 };
