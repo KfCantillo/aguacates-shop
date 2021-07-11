@@ -5,7 +5,9 @@ export const getBaseUrlApi = () => {
     return 'http://localhost:3000/';
   } else if (env === 'test') {
     return 'https://test.kcfashion.store/';
-  } else {
+  } else if (env === 'production') {
     return 'https://kcfashion.store/';
+  } else {
+    return `${window.location.protocol}//${window.location.host}`
   }
 };

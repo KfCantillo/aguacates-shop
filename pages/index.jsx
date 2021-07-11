@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Layout from '@components/Layout/Layout';
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader';
 import ProductList from '@components/ProductList/ProductList';
+import LoadingProductList from '@components/Commons/LoadingProduct';
 
 import productsService from '@services/productsService.js';
 /* Use for pre rendering products */
@@ -33,7 +34,11 @@ const Home = (/*{ productsList }*/) => {
   return (
     <Layout>
       <KawaiiHeader />
-      <ProductList products={productsList} />
+      {productsList.length ? (
+        <ProductList products={productsList} />
+      ) : (
+        <LoadingProductList repeat={8} />
+      )}
     </Layout>
   );
 };
